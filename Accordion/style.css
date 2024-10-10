@@ -8,8 +8,33 @@ body{
 
 .accordion{
     background-color: #888;
-    padding: 4px 16px;
+    padding: 4px 20px;
     margin-bottom: 16px;
     border-radius: 10px;
+    cursor: pointer;
     /* box-shadow: 1px 1px 5px #888; */
 }
+
+.question{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon{
+    margin-right: 16px;
+    transition: transform 0.2s;
+}
+
+.icon.active{
+    transform: rotate(-180deg);
+}
+
+.answer{
+    color: aliceblue;
+    max-height: 0;
+    overflow: hidden;
+}
+
+
+
