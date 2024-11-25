@@ -7,7 +7,8 @@ async function fetchimages() {
             method:'GET'
         });
         const imageList=await response.json();
-
+        console.log("API Called");
+        
         if (imageList && imageList.length > 0) displayImages(imageList);
 
 
@@ -19,6 +20,7 @@ async function fetchimages() {
 
 
 function displayImages(getImageList){
+    
     slider.innerHTML=getImageList.map(
         (item)=> `
         <div class="slide">
@@ -26,11 +28,11 @@ function displayImages(getImageList){
         </div>`
     ).join(" ");
 
-    // dotsContainer.innerHTML= getImageList.map(
-    //     (item,index) =>`
-    //     <span class="dot" data-slide=${index}></span>`
+    dotsContainer.innerHTML= getImageList.map(
+        (item,index) =>`
+        <span class="dot" data-slide=${index}></span>`
             
-    // ).join(" ");
+    ).join(" ");
 
 
 
