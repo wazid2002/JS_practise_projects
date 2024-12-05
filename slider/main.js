@@ -30,7 +30,7 @@ function displayImages(getImageList){
 
     dotsContainer.innerHTML= getImageList.map(
         (item,index) =>`
-        <span class="dot" data-slide=${index}></span>`
+        <span class="dot ${index === 0 ? 'active': " "}" data-slide=${index}></span>`
             
     ).join(" ");
 
@@ -40,3 +40,58 @@ function displayImages(getImageList){
 
 fetchimages();
 
+
+
+setTimeout(()=>{
+
+
+    const slides=document.querySelectorAll('.slide');
+    const prevbtn=document.querySelector('.prev')
+    const nextbtn=document.querySelector('.next');
+
+    let currentSlide=0;
+
+    function activeDot(slide){
+        document.querySelectorAll('.dot').forEach(dotItem=> dotItem.classList.remove('active'));
+        document.querySelector(`.dot[data-slide="${slide}"]`).classList.add('active');
+
+
+    }
+
+    nextbtn.addEventListener('click',()=>{
+        currentSlide++
+
+        if(slides.length -1 < currentSlide){
+            currentSlide = 0
+        }
+
+        changeCurrentSlide(currentSlide);
+        activeDot(currentSlide);
+
+    })
+
+    prevbtn.addEventListener('click',()=>{
+        currentSlide--
+
+        if(0>= currentSlide){
+            currentSlide = 0;
+        }
+
+        changeCurrentSlide(currentSlide);
+        activeDot(currentSlide);
+
+
+    })
+
+    dotsContainer.addEventListener('click',()=>{
+
+    })
+}
+
+,1000)
+
+
+function handleImageSlider(){
+}
+
+handleImageSlider()
