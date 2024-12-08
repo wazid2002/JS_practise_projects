@@ -58,6 +58,14 @@ setTimeout(()=>{
 
     }
 
+    function changeCurrentSlide(currentSlide){
+        slides.forEach((index,slideItem)=>
+            (slideItem.style.transform = `translateX(${100*(index-currentSlide)}%)`)
+        );
+    }
+
+    changeCurrentSlide(currentSlide)
+
     nextbtn.addEventListener('click',()=>{
         currentSlide++
 
@@ -65,7 +73,6 @@ setTimeout(()=>{
             currentSlide = 0
         }
 
-        changeCurrentSlide(currentSlide);
         activeDot(currentSlide);
 
     })
@@ -77,7 +84,6 @@ setTimeout(()=>{
             currentSlide = 0;
         }
 
-        changeCurrentSlide(currentSlide);
         activeDot(currentSlide);
 
 
@@ -90,8 +96,3 @@ setTimeout(()=>{
 
 ,1000)
 
-
-function handleImageSlider(){
-}
-
-handleImageSlider()
