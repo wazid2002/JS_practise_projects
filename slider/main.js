@@ -3,7 +3,7 @@ const dotsContainer=document.querySelector('.dots-container')
 
 async function fetchimages() {
     try{
-        const response=await fetch('https://api.unsplash.com/photos/random?client_id=Jd_hDv9F_Zg1WKM7J45pWUI9tt5HkiROo3wpfgksdos&count=5',{
+        const response=await fetch('https://api.unsplash.com/photos/random?client_id=Jd_hDv9F_Zg1WKM7J45pWUI9tt5HkiROo3wpfgksdos&count=10',{
             method:'GET'
         });
         const imageList=await response.json();
@@ -59,12 +59,12 @@ setTimeout(()=>{
     }
 
     function changeCurrentSlide(currentSlide){
-        slides.forEach((index,slideItem)=>
+        slides.forEach((slideItem,index)=>
             (slideItem.style.transform = `translateX(${100*(index-currentSlide)}%)`)
         );
     }
 
-    changeCurrentSlide(currentSlide)
+    changeCurrentSlide(currentSlide);
 
     nextbtn.addEventListener('click',()=>{
         currentSlide++
@@ -72,7 +72,7 @@ setTimeout(()=>{
         if(slides.length -1 < currentSlide){
             currentSlide = 0
         }
-
+        changeCurrentSlide(currentSlide);
         activeDot(currentSlide);
 
     })
@@ -83,13 +83,19 @@ setTimeout(()=>{
         if(0>= currentSlide){
             currentSlide = 0;
         }
-
+        changeCurrentSlide(currentSlide);
         activeDot(currentSlide);
 
 
     })
 
-    dotsContainer.addEventListener('click',()=>{
+    dotsContainer.addEventListener('click',(event)=>{
+        if(event.target.classList.contains('dot')){
+            const currentSlide=event.target.dataset.slide
+            changeCurrentSlide(currentSlide);
+            activeDot(currentSlide);
+        }
+
 
     })
 }

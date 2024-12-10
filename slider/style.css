@@ -78,3 +78,7 @@ h1{
 
 }
 
+.dots-container .dot.active{
+    background-color: black;
+}
+
