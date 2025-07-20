@@ -7,5 +7,7 @@ This repository contains a collection of beginner-to-intermediate JS projects.
   - [Clock](./JavaScript30/02-Js&Css-Clock)
   - [CSS Variables](./JavaScript30/03-Css-Variables)
   - [Array Cardio](./JavaScript30/04-Array-Cardio)
+  - [Flex Panel Gallery](./JavaScript30/05-Flex-Gallery)
+
 
 - Other Projects....
