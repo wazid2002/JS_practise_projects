@@ -8,6 +8,8 @@ This repository contains a collection of beginner-to-intermediate JS projects.
   - [CSS Variables](./JavaScript30/03-Css-Variables)
   - [Array Cardio](./JavaScript30/04-Array-Cardio)
   - [Flex Panel Gallery](./JavaScript30/05-Flex-Gallery)
+  - [Type Ahead](./JavaScript30/06-Type-Ahead)
+  - [Array Cardio 2](./JavaScript30/07-Array-Cardio2)
 
 
 - Other Projects....
